@@ -1,40 +1,40 @@
-Styles = require '../lib/styles'
+Styles = require '../lib/styles-highlighter'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "Styles", ->
+describe "StylesHighlighter", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('styles')
+    activationPromise = atom.packages.activatePackage('styles-highlighter')
 
-  describe "when the styles:toggle event is triggered", ->
+  describe "when the styles-highlighter:toggle event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.styles')).not.toExist()
+      expect(workspaceElement.querySelector('.styles-highlighter')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'styles:toggle'
+      atom.commands.dispatch workspaceElement, 'styles-highlighter:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.styles')).toExist()
+        expect(workspaceElement.querySelector('.styles-highlighter')).toExist()
 
-        stylesElement = workspaceElement.querySelector('.styles')
-        expect(stylesElement).toExist()
+        stylesHighlighterElement = workspaceElement.querySelector('.styles-highlighter')
+        expect(stylesHighlighterElement).toExist()
 
-        stylesPanel = atom.workspace.panelForItem(stylesElement)
-        expect(stylesPanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'styles:toggle'
-        expect(stylesPanel.isVisible()).toBe false
+        stylesHighlighterPanel = atom.workspace.panelForItem(stylesHighlighterElement)
+        expect(stylesHighlighterPanel.isVisible()).toBe true
+        atom.commands.dispatch workspaceElement, 'styles-highlighter:toggle'
+        expect(stylesHighlighterPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
       # This test shows you an integration test testing at the view level.
@@ -45,18 +45,18 @@ describe "Styles", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.styles')).not.toExist()
+      expect(workspaceElement.querySelector('.styles-highlighter')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'styles:toggle'
+      atom.commands.dispatch workspaceElement, 'styles-highlighter:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        stylesElement = workspaceElement.querySelector('.styles')
-        expect(stylesElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'styles:toggle'
-        expect(stylesElement).not.toBeVisible()
+        stylesHighlighterElement = workspaceElement.querySelector('.styles-highlighter')
+        expect(stylesHighlighterElement).toBeVisible()
+        atom.commands.dispatch workspaceElement, 'styles-highlighter:toggle'
+        expect(stylesHighlighterElement).not.toBeVisible()

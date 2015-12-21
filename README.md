@@ -1,4 +1,4 @@
-# styles package
+# styles-highlighter package
 
 A short description of your package.
 

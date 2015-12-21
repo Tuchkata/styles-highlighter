@@ -1,14 +1,14 @@
 {
-  "name": "styles",
-  "main": "./lib/styles",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "name": "styles-highlighter",
+  "main": "./lib/styles-highlighter",
+  "version": "0.0.1",
+  "description": "A styles highlighter plugin for the Atom text editor.",
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "styles:toggle"
+    "atom-workspace": "styles-highlighter:toggle"
   },
-  "repository": "https://github.com/atom/styles",
+  "repository": "https://github.com/Tuchkata/styles-highlighter",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

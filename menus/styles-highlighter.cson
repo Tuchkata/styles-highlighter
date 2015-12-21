@@ -3,18 +3,18 @@
   'atom-text-editor': [
     {
       'label': 'Toggle styles'
-      'command': 'styles:toggle'
+      'command': 'styles-highlighter:toggle'
     }
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'styles'
+      'label': 'styles-highlighter'
       'submenu': [
         {
           'label': 'Toggle'
-          'command': 'styles:toggle'
+          'command': 'styles-highlighter:toggle'
         }
       ]
     ]
