@@ -10,10 +10,10 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'styles-highlighter'
+      'label': 'Styles highlighter'
       'submenu': [
         {
-          'label': 'Toggle'
+          'label': 'Mark style 1'
           'command': 'styles-highlighter:toggle'
         }
       ]

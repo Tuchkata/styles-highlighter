@@ -6,6 +6,7 @@ module.exports = StylesHighlighter =
   modalPanel: null
   subscriptions: null
 
+  # the method called when the package is activated
   activate: (state) ->
     @stylesHighlighterView = new StylesHighlighterView(state.stylesHighlighterViewState)
     @modalPanel = atom.workspace.addModalPanel(item: @stylesHighlighterView.getElement(), visible: false)
@@ -16,11 +17,15 @@ module.exports = StylesHighlighter =
     # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:toggle': => @toggle()
 
+  # called when the windows is shutting down. If any files or resources are caught
+  # by the package, they should be released here
   deactivate: ->
     @modalPanel.destroy()
     @subscriptions.dispose()
     @stylesHighlighterView.destroy()
 
+  # called when the window is shutting down in order to save the state of the package
+  # to a JSON object
   serialize: ->
     stylesHighlighterViewState: @stylesHighlighterView.serialize()
 
