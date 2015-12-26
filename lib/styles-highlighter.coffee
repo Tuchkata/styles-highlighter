@@ -32,7 +32,32 @@ module.exports = StylesHighlighter =
   toggle: ->
     console.log 'Styles highlighter was toggled!'
 
-    if @modalPanel.isVisible()
-      @modalPanel.hide()
+    if @stylesHighlighterView.disable
+      @stylesHighlighterView.enable()
     else
-      @modalPanel.show()
+      @stylesHighlighterView.disable()
+
+  markFirstStyle: ->
+    editor = @getActiveEditor()
+    return unless editor
+    return if editor.getLastSelection().isEmpty()
+
+  markSecondStyle: ->
+
+  markThirdStyle: ->
+
+  markFourthStyle: ->
+
+  markFifthStyle: ->
+
+  clearFirstStyle: ->
+
+  clearSecondStyle: ->
+
+  clearThirdStyle: ->
+
+  clearFourthStyle: ->
+
+  clearFifthStyle: ->
+
+  clearAllStyles: ->

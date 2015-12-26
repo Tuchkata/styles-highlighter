@@ -4,19 +4,19 @@
     {
       'label': 'Highlight styles'
       'submenu': [
-        {label: 'Mark style 1', command: 'styles-highlighter:toggle'}
-        {label: 'Mark style 2', command: 'styles-highlighter:toggle'}
-        {label: 'Mark style 3', command: 'styles-highlighter:toggle'}
-        {label: 'Mark style 4', command: 'styles-highlighter:toggle'}
-        {label: 'Mark style 5', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 1', command: 'styles-highlighter:markFirstStyle'}
+        {label: 'Mark style 2', command: 'styles-highlighter:markSecondStyle'}
+        {label: 'Mark style 3', command: 'styles-highlighter:markThirdStyle'}
+        {label: 'Mark style 4', command: 'styles-highlighter:markFourthStyle'}
+        {label: 'Mark style 5', command: 'styles-highlighter:markFifthStyle'}
         {type: 'separator'}
-        {label: 'Clear style 1', command: 'styles-highlighter:toggle'}
-        {label: 'Clear style 2', command: 'styles-highlighter:toggle'}
-        {label: 'Clear style 3', command: 'styles-highlighter:toggle'}
-        {label: 'Clear style 4', command: 'styles-highlighter:toggle'}
-        {label: 'Clear style 5', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 1', command: 'styles-highlighter:clearFirstStyle'}
+        {label: 'Clear style 2', command: 'styles-highlighter:clearSecondStyle'}
+        {label: 'Clear style 3', command: 'styles-highlighter:clearThirdStyle'}
+        {label: 'Clear style 4', command: 'styles-highlighter:clearFourthStyle'}
+        {label: 'Clear style 5', command: 'styles-highlighter:clearFifthStyle'}
         {type: 'separator'}
-        {label: 'Clear all styles', command: 'styles-highlighter:toggle'}
+        {label: 'Clear all styles', command: 'styles-highlighter:clearAllStyles'}
       ]
     }
   ]
@@ -26,19 +26,19 @@
     'submenu': [
       'label': 'Styles highlighter'
       'submenu': [
-        {label: 'Mark style 1', command: 'styles-highlighter:toggle'}
-        {label: 'Mark style 2', command: 'styles-highlighter:toggle'}
-        {label: 'Mark style 3', command: 'styles-highlighter:toggle'}
-        {label: 'Mark style 4', command: 'styles-highlighter:toggle'}
-        {label: 'Mark style 5', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 1', command: 'styles-highlighter:markFirstStyle'}
+        {label: 'Mark style 2', command: 'styles-highlighter:markSecondStyle'}
+        {label: 'Mark style 3', command: 'styles-highlighter:markThirdStyle'}
+        {label: 'Mark style 4', command: 'styles-highlighter:markFourthStyle'}
+        {label: 'Mark style 5', command: 'styles-highlighter:markFifthStyle'}
         {type: 'separator'}
-        {label: 'Clear style 1', command: 'styles-highlighter:toggle'}
-        {label: 'Clear style 2', command: 'styles-highlighter:toggle'}
-        {label: 'Clear style 3', command: 'styles-highlighter:toggle'}
-        {label: 'Clear style 4', command: 'styles-highlighter:toggle'}
-        {label: 'Clear style 5', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 1', command: 'styles-highlighter:clearFirstStyle'}
+        {label: 'Clear style 2', command: 'styles-highlighter:clearSecondStyle'}
+        {label: 'Clear style 3', command: 'styles-highlighter:clearThirdStyle'}
+        {label: 'Clear style 4', command: 'styles-highlighter:clearFourthStyle'}
+        {label: 'Clear style 5', command: 'styles-highlighter:clearFifthStyle'}
         {type: 'separator'}
-        {label: 'Clear all styles', command: 'styles-highlighter:toggle'}
+        {label: 'Clear all styles', command: 'styles-highlighter:clearAllStyles'}
       ]
     ]
   }

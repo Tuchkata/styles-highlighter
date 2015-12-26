@@ -20,3 +20,9 @@ class StylesHighlighterView
 
   getElement: ->
     @element
+
+  enable: ->
+    @disabled = false
+
+  disable: ->
+    @disabled = true
