@@ -7,7 +7,7 @@ class StylesHighlighterView
 
     # Create message element
     message = document.createElement('div')
-    message.textContent = "The Styles Highlighter package is Alive! It's ALIVE!"
+    message.textContent = "The Styles Highlighter package is started"
     message.classList.add('message')
     @element.appendChild(message)
 
