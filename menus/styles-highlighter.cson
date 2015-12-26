@@ -5,8 +5,18 @@
       'label': 'Highlight styles'
       'submenu': [
         {label: 'Mark style 1', command: 'styles-highlighter:toggle'}
-        {type: 'separator'}
         {label: 'Mark style 2', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 3', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 4', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 5', command: 'styles-highlighter:toggle'}
+        {type: 'separator'}
+        {label: 'Clear style 1', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 2', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 3', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 4', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 5', command: 'styles-highlighter:toggle'}
+        {type: 'separator'}
+        {label: 'Clear all styles', command: 'styles-highlighter:toggle'}
       ]
     }
   ]
@@ -16,14 +26,19 @@
     'submenu': [
       'label': 'Styles highlighter'
       'submenu': [
-        {
-          'label': 'Mark style 1'
-          'command': 'styles-highlighter:toggle'
-        }
-        {
-          'label': 'Mark style 2'
-          'command': 'styles-highlighter:toggle'
-        }
+        {label: 'Mark style 1', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 2', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 3', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 4', command: 'styles-highlighter:toggle'}
+        {label: 'Mark style 5', command: 'styles-highlighter:toggle'}
+        {type: 'separator'}
+        {label: 'Clear style 1', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 2', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 3', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 4', command: 'styles-highlighter:toggle'}
+        {label: 'Clear style 5', command: 'styles-highlighter:toggle'}
+        {type: 'separator'}
+        {label: 'Clear all styles', command: 'styles-highlighter:toggle'}
       ]
     ]
   }
