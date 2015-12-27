@@ -86,19 +86,19 @@ module.exports = StylesHighlighter =
       console.log "Marker destroyed"
 
   markFirstStyle: ->
-    @markSelection(@style1Highlights, 'highlighted')
+    @markSelection(@style1Highlights, 'highlighStyle1')
 
   markSecondStyle: ->
-    @markSelection(@style2Highlights, 'highlighted')
+    @markSelection(@style2Highlights, 'highlighStyle2')
 
   markThirdStyle: ->
-    @markSelection(@style3Highlights, 'highlighted')
+    @markSelection(@style3Highlights, 'highlighStyle3')
 
   markFourthStyle: ->
-    @markSelection(@style4Highlights, 'highlighted')
+    @markSelection(@style4Highlights, 'highlighStyle4')
 
   markFifthStyle: ->
-    @markSelection(@style5Highlights, 'highlighted')
+    @markSelection(@style5Highlights, 'highlighStyle5')
 
   clearFirstStyle: ->
     @clearMarkers(@style1Highlights)
