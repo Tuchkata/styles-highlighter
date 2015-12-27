@@ -8,6 +8,12 @@ module.exports = StylesHighlighter =
 
   # the method called when the package is activated
   activate: (state) ->
+    @style1Highlights = []
+    @style2Highlights = []
+    @style3Highlights = []
+    @style4Highlights = []
+    @style5Highlights = []
+
     @stylesHighlighterView = new StylesHighlighterView(state.stylesHighlighterViewState)
     @modalPanel = atom.workspace.addModalPanel(item: @stylesHighlighterView.getElement(), visible: false)
 
@@ -50,7 +56,7 @@ module.exports = StylesHighlighter =
     else
       @stylesHighlighterView.disable()
 
-  markSelection: ->
+  markSelection: (highlights, style)->
     editor = atom.workspace.getActiveTextEditor();
     console.log 'Got editor'
     return unless editor
@@ -67,35 +73,51 @@ module.exports = StylesHighlighter =
       (result) =>
         occurences +=1
         marker = editor.markBufferRange(result.range)
-        editor.decorateMarker(marker, {type: 'highlight', class: 'highlighted'})
+        decoration = editor.decorateMarker(marker, {type: 'highlight', class: style})
         console.log 'added marker for occurence'
+        highlights.push(marker)
 
     console.log "Found #{selectedText} #{occurences} times in document"
 
+  clearMarkers: (highlights)->
+    for marker in highlights
+      marker.destroy()
+      marker = null
+      console.log "Marker destroyed"
 
   markFirstStyle: ->
-    @markSelection()
+    @markSelection(@style1Highlights, 'highlighted')
 
   markSecondStyle: ->
-    @markSelection()
+    @markSelection(@style2Highlights, 'highlighted')
 
   markThirdStyle: ->
-    @markSelection()
+    @markSelection(@style3Highlights, 'highlighted')
 
   markFourthStyle: ->
-    @markSelection()
+    @markSelection(@style4Highlights, 'highlighted')
 
   markFifthStyle: ->
-    @markSelection()
+    @markSelection(@style5Highlights, 'highlighted')
 
   clearFirstStyle: ->
+    @clearMarkers(@style1Highlights)
 
   clearSecondStyle: ->
+    @clearMarkers(@style2Highlights)
 
   clearThirdStyle: ->
+    @clearMarkers(@style3Highlights)
 
   clearFourthStyle: ->
+    @clearMarkers(@style4Highlights)
 
   clearFifthStyle: ->
+    @clearMarkers(@style5Highlights)
 
   clearAllStyles: ->
+    @clearMarkers(@style1Highlights)
+    @clearMarkers(@style2Highlights)
+    @clearMarkers(@style3Highlights)
+    @clearMarkers(@style4Highlights)
+    @clearMarkers(@style5Highlights)
