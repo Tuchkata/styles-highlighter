@@ -16,6 +16,17 @@ module.exports = StylesHighlighter =
 
     # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:toggle': => @toggle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markFirstStyle': => @markFirstStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markSecondStyle': => @markSecondStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markThirdStyle': => @markThirdStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markFourthStyle': => @markFourthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markFifthStyle': => @markFifthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearFirstStyle': => @clearFirstStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearSecondStyle': => @clearSecondStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearThirdStyle': => @clearThirdStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearFourthStyle': => @clearFourthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearFifthStyle': => @clearFifthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearAllStyles': => @clearAllStyles()
 
   # called when the windows is shutting down. If any files or resources are caught
   # by the package, they should be released here
@@ -30,25 +41,40 @@ module.exports = StylesHighlighter =
     stylesHighlighterViewState: @stylesHighlighterView.serialize()
 
   toggle: ->
-    console.log 'Styles highlighter was toggled!'
+    console.log 'Styles highlighter was toggled! Getting Editor'
+
+    @markSelection()
 
     if @stylesHighlighterView.disable
       @stylesHighlighterView.enable()
     else
       @stylesHighlighterView.disable()
 
-  markFirstStyle: ->
-    editor = @getActiveEditor()
+  markSelection: ->
+    editor = atom.workspace.getActiveTextEditor();
+    console.log 'Got editor'
     return unless editor
+    console.log 'checking if we have a selection'
     return if editor.getLastSelection().isEmpty()
 
+    selectedText = editor.getSelectedText()
+    console.log "Highlighting all occurences of #{selectedText}"
+
+
+  markFirstStyle: ->
+    @markSelection()
+
   markSecondStyle: ->
+    @markSelection()
 
   markThirdStyle: ->
+    @markSelection()
 
   markFourthStyle: ->
+    @markSelection()
 
   markFifthStyle: ->
+    @markSelection()
 
   clearFirstStyle: ->
 
