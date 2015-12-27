@@ -60,6 +60,18 @@ module.exports = StylesHighlighter =
     selectedText = editor.getSelectedText()
     console.log "Highlighting all occurences of #{selectedText}"
 
+    range = [[0, 0], editor.getEofBufferPosition()]
+
+    occurences = 0;
+    editor.scanInBufferRange new RegExp(selectedText, 'g'), range,
+      (result) =>
+        occurences +=1
+        marker = editor.markBufferRange(result.range)
+        editor.decorateMarker(marker, {type: 'highlight', class: 'highlighted'})
+        console.log 'added marker for occurence'
+
+    console.log "Found #{selectedText} #{occurences} times in document"
+
 
   markFirstStyle: ->
     @markSelection()
