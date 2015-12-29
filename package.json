@@ -6,7 +6,19 @@
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "styles-highlighter:toggle"
+    "atom-workspace": [
+    "styles-highlighter:markFirstStyle",
+    "styles-highlighter:markSecondStyle",
+    "styles-highlighter:markThirdStyle",
+    "styles-highlighter:markFourthStyle",
+    "styles-highlighter:markFifthStyle",
+    "styles-highlighter:clearFirstStyle",
+    "styles-highlighter:clearSecondStyle",
+    "styles-highlighter:clearThirdStyle",
+    "styles-highlighter:clearFourthStyle",
+    "styles-highlighter:clearFifthStyle",
+    "styles-highlighter:clearAllStyles"
+  ]
   },
   "repository": "https://github.com/Tuchkata/styles-highlighter",
   "license": "MIT",

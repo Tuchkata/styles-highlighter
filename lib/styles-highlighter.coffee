@@ -20,8 +20,6 @@ module.exports = StylesHighlighter =
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
 
-    # Register command that toggles this view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:toggle': => @toggle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markFirstStyle': => @markFirstStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markSecondStyle': => @markSecondStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markThirdStyle': => @markThirdStyle()
@@ -45,16 +43,6 @@ module.exports = StylesHighlighter =
   # to a JSON object
   serialize: ->
     stylesHighlighterViewState: @stylesHighlighterView.serialize()
-
-  toggle: ->
-    console.log 'Styles highlighter was toggled! Getting Editor'
-
-    @markSelection()
-
-    if @stylesHighlighterView.disable
-      @stylesHighlighterView.enable()
-    else
-      @stylesHighlighterView.disable()
 
   markSelection: (highlights, style)->
     editor = atom.workspace.getActiveTextEditor();
