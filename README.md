@@ -1,8 +1,8 @@
 # styles-highlighter package
 
-A short description of your package.
+A styles highlighter plugin for the Atom text editor. It highlights with a specific color all occurrences of the selected string in the current document.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+![A screenshot of your package](https://cloud.githubusercontent.com/assets/493395/12183016/c1a7ca68-b594-11e5-9497-5f405fc0d062.gif)
 
 TODO :
 - When these are ready, we should observe what we should do next.

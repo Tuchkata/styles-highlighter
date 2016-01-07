@@ -1,8 +1,8 @@
 {
   "name": "styles-highlighter",
   "main": "./lib/styles-highlighter",
-  "version": "0.0.1",
-  "description": "A styles highlighter plugin for the Atom text editor.",
+  "version": "1.0.0",
+  "description": "A styles highlighter plugin for the Atom text editor. It highlights with a specific color all occurrences of the selected string in the current document.",
   "keywords": [
   ],
   "activationCommands": {
