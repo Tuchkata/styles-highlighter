@@ -13,6 +13,11 @@ module.exports = StylesHighlighter =
     @style3Highlights = []
     @style4Highlights = []
     @style5Highlights = []
+    @style6Highlights = []
+    @style7Highlights = []
+    @style8Highlights = []
+    @style9Highlights = []
+    @style10Highlights = []
 
     @stylesHighlighterView = new StylesHighlighterView(state.stylesHighlighterViewState)
     @modalPanel = atom.workspace.addModalPanel(item: @stylesHighlighterView.getElement(), visible: false)
@@ -25,11 +30,21 @@ module.exports = StylesHighlighter =
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markThirdStyle': => @markThirdStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markFourthStyle': => @markFourthStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markFifthStyle': => @markFifthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markSixthStyle': => @markSixthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markSeventhStyle': => @markSeventhStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markEighthStyle': => @markEighthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markNinethStyle': => @markNinethStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:markTenthStyle': => @markTenthStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearFirstStyle': => @clearFirstStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearSecondStyle': => @clearSecondStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearThirdStyle': => @clearThirdStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearFourthStyle': => @clearFourthStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearFifthStyle': => @clearFifthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearSixthStyle': => @clearSixthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearSeventhStyle': => @clearSeventhStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearEighthStyle': => @clearEighthStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearNinethStyle': => @clearNinethStyle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearTenthStyle': => @clearTenthStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearAllStyles': => @clearAllStyles()
 
   # called when the windows is shutting down. If any files or resources are caught
@@ -88,6 +103,21 @@ module.exports = StylesHighlighter =
   markFifthStyle: ->
     @markSelection(@style5Highlights, 'highlighStyle5')
 
+  markSixthStyle: ->
+    @markSelection(@style6Highlights, 'highlighStyle6')
+
+  markSeventhStyle: ->
+    @markSelection(@style7Highlights, 'highlighStyle7')
+
+  markEighthStyle: ->
+    @markSelection(@style8Highlights, 'highlighStyle8')
+
+  markNinethStyle: ->
+    @markSelection(@style9Highlights, 'highlighStyle9')
+
+  markTenthStyle: ->
+    @markSelection(@style10Highlights, 'highlighStyle10')
+
   clearFirstStyle: ->
     @clearMarkers(@style1Highlights)
 
@@ -103,9 +133,29 @@ module.exports = StylesHighlighter =
   clearFifthStyle: ->
     @clearMarkers(@style5Highlights)
 
+  clearSixthStyle: ->
+    @clearMarkers(@style6Highlights)
+
+  clearSeventhStyle: ->
+    @clearMarkers(@style7Highlights)
+
+  clearEighthStyle: ->
+    @clearMarkers(@style8Highlights)
+
+  clearNinethStyle: ->
+    @clearMarkers(@style9Highlights)
+
+  clearTenthStyle: ->
+    @clearMarkers(@style10Highlights)
+
   clearAllStyles: ->
     @clearMarkers(@style1Highlights)
     @clearMarkers(@style2Highlights)
     @clearMarkers(@style3Highlights)
     @clearMarkers(@style4Highlights)
     @clearMarkers(@style5Highlights)
+    @clearMarkers(@style6Highlights)
+    @clearMarkers(@style7Highlights)
+    @clearMarkers(@style8Highlights)
+    @clearMarkers(@style9Highlights)
+    @clearMarkers(@style10Highlights)

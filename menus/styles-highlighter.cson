@@ -9,12 +9,22 @@
         {label: 'Mark style 3', command: 'styles-highlighter:markThirdStyle'}
         {label: 'Mark style 4', command: 'styles-highlighter:markFourthStyle'}
         {label: 'Mark style 5', command: 'styles-highlighter:markFifthStyle'}
+        {label: 'Mark style 6', command: 'styles-highlighter:markSixthStyle'}
+        {label: 'Mark style 7', command: 'styles-highlighter:markSeventhStyle'}
+        {label: 'Mark style 8', command: 'styles-highlighter:markEighthStyle'}
+        {label: 'Mark style 9', command: 'styles-highlighter:markNinethStyle'}
+        {label: 'Mark style 10', command: 'styles-highlighter:markTenthStyle'}
         {type: 'separator'}
         {label: 'Clear style 1', command: 'styles-highlighter:clearFirstStyle'}
         {label: 'Clear style 2', command: 'styles-highlighter:clearSecondStyle'}
         {label: 'Clear style 3', command: 'styles-highlighter:clearThirdStyle'}
         {label: 'Clear style 4', command: 'styles-highlighter:clearFourthStyle'}
         {label: 'Clear style 5', command: 'styles-highlighter:clearFifthStyle'}
+        {label: 'Clear style 6', command: 'styles-highlighter:clearSixthStyle'}
+        {label: 'Clear style 7', command: 'styles-highlighter:clearSeventhStyle'}
+        {label: 'Clear style 8', command: 'styles-highlighter:clearEighthStyle'}
+        {label: 'Clear style 9', command: 'styles-highlighter:clearNinethStyle'}
+        {label: 'Clear style 10', command: 'styles-highlighter:clearTenthStyle'}
         {type: 'separator'}
         {label: 'Clear all styles', command: 'styles-highlighter:clearAllStyles'}
       ]
@@ -31,12 +41,22 @@
         {label: 'Mark style 3', command: 'styles-highlighter:markThirdStyle'}
         {label: 'Mark style 4', command: 'styles-highlighter:markFourthStyle'}
         {label: 'Mark style 5', command: 'styles-highlighter:markFifthStyle'}
+        {label: 'Mark style 6', command: 'styles-highlighter:markSixthStyle'}
+        {label: 'Mark style 7', command: 'styles-highlighter:markSeventhStyle'}
+        {label: 'Mark style 8', command: 'styles-highlighter:markEighthStyle'}
+        {label: 'Mark style 9', command: 'styles-highlighter:markNinethStyle'}
+        {label: 'Mark style 10', command: 'styles-highlighter:markTenthStyle'}
         {type: 'separator'}
         {label: 'Clear style 1', command: 'styles-highlighter:clearFirstStyle'}
         {label: 'Clear style 2', command: 'styles-highlighter:clearSecondStyle'}
         {label: 'Clear style 3', command: 'styles-highlighter:clearThirdStyle'}
         {label: 'Clear style 4', command: 'styles-highlighter:clearFourthStyle'}
         {label: 'Clear style 5', command: 'styles-highlighter:clearFifthStyle'}
+        {label: 'Clear style 6', command: 'styles-highlighter:clearSixthStyle'}
+        {label: 'Clear style 7', command: 'styles-highlighter:clearSeventhStyle'}
+        {label: 'Clear style 8', command: 'styles-highlighter:clearEighthStyle'}
+        {label: 'Clear style 9', command: 'styles-highlighter:clearNinethStyle'}
+        {label: 'Clear style 10', command: 'styles-highlighter:clearTenthStyle'}
         {type: 'separator'}
         {label: 'Clear all styles', command: 'styles-highlighter:clearAllStyles'}
       ]
