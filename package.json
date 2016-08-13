@@ -26,7 +26,8 @@
       "styles-highlighter:clearEighthStyle",
       "styles-highlighter:clearNinethStyle",
       "styles-highlighter:clearTenthStyle",
-      "styles-highlighter:clearAllStyles"
+      "styles-highlighter:clearAllStyles",
+      "styles-highlighter:toggleOccurenceHighlighter"
     ]
   },
   "repository": "https://github.com/Tuchkata/styles-highlighter",
