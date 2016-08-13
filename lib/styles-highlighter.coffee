@@ -18,6 +18,10 @@ module.exports = StylesHighlighter =
     @style8Highlights = []
     @style9Highlights = []
     @style10Highlights = []
+    @occurenceHighlights = []
+
+    @highlightOccurencesToggled = false
+    @editor = atom.workspace.getActiveTextEditor();
 
     @stylesHighlighterView = new StylesHighlighterView(state.stylesHighlighterViewState)
     @modalPanel = atom.workspace.addModalPanel(item: @stylesHighlighterView.getElement(), visible: false)
@@ -46,6 +50,8 @@ module.exports = StylesHighlighter =
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearNinethStyle': => @clearNinethStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearTenthStyle': => @clearTenthStyle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:clearAllStyles': => @clearAllStyles()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:toggleOccurenceHighlighter': => @toogleHighglightOccurence()
+    @subscriptions.add @editor.onDidChangeSelectionRange => @highlightOccurences()
 
   # called when the windows is shutting down. If any files or resources are caught
   # by the package, they should be released here
@@ -60,23 +66,21 @@ module.exports = StylesHighlighter =
     stylesHighlighterViewState: @stylesHighlighterView.serialize()
 
   markSelection: (highlights, style)->
-    editor = atom.workspace.getActiveTextEditor();
-    console.log 'Got editor'
-    return unless editor
+    return unless @editor
     console.log 'checking if we have a selection'
-    return if editor.getLastSelection().isEmpty()
+    return if @editor.getLastSelection().isEmpty()
 
-    selectedText = editor.getSelectedText()
+    selectedText = @editor.getSelectedText()
     console.log "Highlighting all occurences of #{selectedText}"
 
-    range = [[0, 0], editor.getEofBufferPosition()]
+    range = [[0, 0], @editor.getEofBufferPosition()]
 
     occurences = 0;
-    editor.scanInBufferRange new RegExp(selectedText, 'g'), range,
+    @editor.scanInBufferRange new RegExp(selectedText, 'g'), range,
       (result) =>
         occurences +=1
-        marker = editor.markBufferRange(result.range)
-        decoration = editor.decorateMarker(marker, {type: 'highlight', class: style})
+        marker = @editor.markBufferRange(result.range)
+        decoration = @editor.decorateMarker(marker, {type: 'highlight', class: style})
         console.log 'added marker for occurence'
         highlights.push(marker)
 
@@ -159,3 +163,15 @@ module.exports = StylesHighlighter =
     @clearMarkers(@style8Highlights)
     @clearMarkers(@style9Highlights)
     @clearMarkers(@style10Highlights)
+
+  toogleHighglightOccurence: ->
+    if (@highlightOccurencesToggled)
+      @highlightOccurencesToggled = false
+      @clearMarkers(@occurenceHighlights)
+    else
+      @highlightOccurencesToggled = true
+
+  highlightOccurences: ->
+    return if !@highlightOccurencesToggled
+    @clearMarkers(@occurenceHighlights)
+    @markSelection(@occurenceHighlights, 'occurenceHighlight')

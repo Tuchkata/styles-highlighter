@@ -26,6 +26,8 @@
         {label: 'Clear style 9', command: 'styles-highlighter:clearNinethStyle'}
         {label: 'Clear style 10', command: 'styles-highlighter:clearTenthStyle'}
         {type: 'separator'}
+        {label: 'Toogle Occurence highlighter', command: 'styles-highlighter:toggleOccurenceHighlighter'}
+        {type: 'separator'}
         {label: 'Clear all styles', command: 'styles-highlighter:clearAllStyles'}
       ]
     }
@@ -57,6 +59,8 @@
         {label: 'Clear style 8', command: 'styles-highlighter:clearEighthStyle'}
         {label: 'Clear style 9', command: 'styles-highlighter:clearNinethStyle'}
         {label: 'Clear style 10', command: 'styles-highlighter:clearTenthStyle'}
+        {type: 'separator'}
+        {label: 'Toogle Occurence highlighter', command: 'styles-highlighter:toggleOccurenceHighlighter'}
         {type: 'separator'}
         {label: 'Clear all styles', command: 'styles-highlighter:clearAllStyles'}
       ]
