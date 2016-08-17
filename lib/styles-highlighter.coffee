@@ -53,6 +53,12 @@ module.exports = StylesHighlighter =
     @subscriptions.add atom.commands.add 'atom-workspace', 'styles-highlighter:toggleOccurenceHighlighter': => @toogleHighglightOccurence()
     @subscriptions.add @editor.onDidChangeSelectionRange => @highlightOccurences()
 
+    @subscriptions.add atom.workspace.observeTextEditors (editor) => @seteditor(editor)
+
+  seteditor: (editor) ->
+    @editor = editor
+    @subscriptions.add @editor.onDidChangeSelectionRange => @highlightOccurences()
+
   # called when the windows is shutting down. If any files or resources are caught
   # by the package, they should be released here
   deactivate: ->
